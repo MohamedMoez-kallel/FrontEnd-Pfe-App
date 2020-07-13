@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ul class="navbar" class="navbar-nav mr-auto">
+    <li class="nav-item"> <a class="nav-link" href="home"*ngIf="userService.isAuthenticated " >Acceuil</a> </li>
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated && userService.isAdmin">Utilisateur</a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="create">Ajouter Utilisateur</a></li>
+        <li class="nav-item"> <a class="nav-link" href="list-employes">Tous les Employés</a></li>
+        <!-- <li class="nav-item"> <a class="nav-link"routerLink="/get-employe/{{user.id}}">Mes Infos</a></li> -->
+
+      </ul>
+    </li>
+    <!-- <li class="nav-item"> <a class="nav-link" href="get-employe" *ngIf="userService.isAuthenticated">Mes Infos</a><ul> </ul></li> -->
+
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated">Publication</a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/publication">Ajouter Publication</a></li>
+        <li class="nav-item"> <a class="nav-link" href="liste-publication">Tous les Publications</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"> <a class="nav-link" href="#"*ngIf="userService.isAuthenticated">Formation</a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/formation">Ajouter Formation</a></li>
+        <li class="nav-item"> <a class="nav-link" href="liste-formation">Tous les Formation</a></li>  
+      </ul>
+    </li>
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated">Evenement</a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/evenement">Ajouter Evenement</a></li>
+        <li class="nav-item"> <a class="nav-link" href="liste-evenement" >Afficher Evenement</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated">Equipement</a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/equipement">Ajouter Equipement</a></li>
+        <li class="nav-item"> <a class="nav-link" href="liste-equipement" >Afficher Equipement</a></li>
+      </ul>
+      
+    </li>
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated">Place Parking </a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/place-parking">Ajouter Place Parking</a></li>
+        <li class="nav-item"> <a class="nav-link" href="liste-place-parking" >Afficher Place Parking</a></li>
+      </ul>
+      
+    </li>
+    <li class="nav-item"> <a class="nav-link" href="#" *ngIf="userService.isAuthenticated">Salle Réunion </a>
+      <ul>
+        <li class="nav-item"> <a class="nav-link" href="ajouter/salle">Ajouter Salle </a></li>
+        <li class="nav-item"> <a class="nav-link" href="afficher-salle" >Afficher tous les salles </a></li>
+      </ul>
+      
+    </li>
+  </ul>
+  <ul class="navbar-nav">
+    <!-- <li routerLinkActive="active"> <a class="nav-link" routerLink="login">Login</a> </li> -->
+    <li routerLinkActive="active"><a  class="nav-link"routerLink="login"  *ngIf="!userService.isAuthenticated"></a></li>
+
+    <li routerLinkActive="active"><a class="nav-link" routerLink="logout" *ngIf="userService.isAuthenticated" (click)="userService.logout()">Logout</a></li>
+
+  </ul>
+
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"> <a  class="nav-link" href="home" >Home</a></li>         
+    <li class="nav-item"> <a  class="nav-link" href="create"  >Create</a></li>
+    <li class="nav-item"> <a  class="nav-link" href="list-employes"  >Tous les employés</a></li>
+    <li class="nav-item"> <a  class="nav-link" href="ajouter/publication"  >Ajouter Publication</a></li>
+    <li class="nav-item"> <a  class="nav-link" href="liste-publication"  >Tous les Publications</a></li>
+    
+  </ul>
+
+  <ul class="navbar-nav">
+    <li routerLinkActive="active">
+      <a class="nav-link"routerLink="login"  >Login</a>
+    </li>
+    <li routerLinkActive="active">
+      <a class="nav-link"routerLink="login"  >Logout</a>
+    </li>
+  </ul>
+
+</nav> -->
+
+
+
+<div class="jumbotron">
+  <div class="col-12">
+    <router-outlet></router-outlet>
+  </div>
+  
+</div>

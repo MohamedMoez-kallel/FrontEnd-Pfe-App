@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="registre">
+    <h1>Publication</h1>
+  </div>
+  <ul class="list-group list-group-flush" *ngFor="let publication of listePublication;"
+    (dblclick)="onSelect(publication)">
+    <li class="list-group-item list-group-item-action">
+
+      <h2>Titre: </h2><h3>{{publication.titre}} </h3>
+      <h2>Description: </h2> <h3> {{publication.description}}</h3>
+    </li>
+    <td>
+      <button (click)="onSelect(publication)" routerLink="/update-publication/{{publication.id}}">Update</button>
+      <button (click)="deletePublication(publication)">Delete</button></td>
+
+  </ul>
+
+  <br><br>
+</div>

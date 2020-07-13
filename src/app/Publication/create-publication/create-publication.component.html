@@ -1,0 +1,39 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter Publication</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && ajouterPub(f.value)" #f="ngForm" novalidate>
+      
+        <div class="form-group">
+          <label for="titre"> Titre</label>
+          <input placeholder="Titre" type="text" class="form-control" name="titre"
+            [(ngModel)]="publication.titre" #titre="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && titre.invalid }" required />
+          <div *ngIf="f.submitted && titre.invalid" class="alert alert-danger">
+            <div *ngIf="titre.errors.required"> Titre est obligatoire</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description"> Description</label>
+          <textarea placeholder="Description" type="textarea" class="form-control" name="description"
+          [(ngModel)]="publication.description" #description="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" required ></textarea>
+          <div *ngIf="f.submitted && description.invalid" class="alert alert-danger">
+            <div *ngIf="description.errors.required">Description est obligatoire</div>
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,218 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter un employé</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && registerUser(f.value)" #f="ngForm" novalidate>
+        <h2>Informations Personnel</h2>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="nom "> Nom</label>
+            <input placeholder="Nom" class="form-control" type="text" name="nom" [(ngModel)]="user.nom" #nom="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && nom.invalid }" required />
+            <div *ngIf="f.submitted && nom.invalid" class="alert alert-danger">
+              <div *ngIf="nom.errors.required"> Nom est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="col">
+            <label for="prenom"> Prenom</label>
+            <input placeholder="Prenom" type="text" class="form-control" name="prenom" [(ngModel)]="user.prenom"
+              #prenom="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prenom.invalid }" required />
+            <div *ngIf="f.submitted && prenom.invalid" class="alert alert-danger">
+              <div *ngIf="prenom.errors.required"> Prenom est obligatoire</div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+
+          <div class="col">
+            <label for="name"> Date Naissance</label>
+            <input placeholder="Date Naissance" type="date" class="form-control" name="date_naissance"
+              [(ngModel)]="user.date_naissance" #date_naissance="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && date_naissance.invalid }" required />
+            <div *ngIf="f.submitted && date_naissance.invalid" class="alert alert-danger">
+              <div *ngIf="date_naissance.errors.required"> Date de naissance est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="col">
+            <label for="name"> Cin</label>
+            <input placeholder="Cin" type="text" class="form-control" name="cin" [(ngModel)]="user.cin" #cin="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cin.invalid }" required />
+            <div *ngIf="f.submitted && cin.invalid" class="alert alert-danger">
+              <div *ngIf="cin.errors.required"> Cin est obligatoire</div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label for="name"> Photo</label>
+            <input placeholder="Photo" type="text" class="form-control" name="name" [(ngModel)]="user.photo"
+              #name="ngModel" />
+          </div>
+          <div class="col">
+            <label class="control-label">Sexe</label>
+            <div class="form-group">
+              <input type="radio" id="homme" value="homme" name="sexe" [(ngModel)]="user.sexe" #sexe="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && sexe.invalid }">
+              <label for="homme">Homme</label>
+              <input type="radio" id="femme" value="femme" name="sexe" [(ngModel)]="user.sexe" #sexe="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && sexe.invalid }">
+              <label for="femme">Femme</label>
+            </div>
+          </div>
+        </div>
+        <h2>Contact</h2>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label for="email">Email</label>
+            <input placeholder="mail@exemple.com" type="text" class="form-control" name="email" [(ngModel)]="user.email"
+              #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email
+              (input)="onChangeInput($event.target.value)" />
+            <div *ngIf="errorRegister" class="alert alert-danger">Email in use</div>
+            <div *ngIf="f.submitted && email.invalid" class="alert alert-danger">
+              <div *ngIf="email.errors.required">Email est obligatoire</div>
+              <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </div>
+          </div>
+
+          <div class="col">
+            <label for="name"> Téléphone</label>
+            <input placeholder="Téléphone" type="number" class="form-control" name="tel" [(ngModel)]="user.tel"
+              #tel="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tel.invalid }" required />
+            <div *ngIf="f.submitted && tel.invalid" class="alert alert-danger">
+              <div *ngIf="tel.errors.required"> Téléphone est obligatoire</div>
+            </div>
+          </div>
+        </div>
+        <h2>Informations Administratif</h2>
+        <hr>
+
+        <div class="row">
+          <div class="col">
+            <label class="control-label">Lieu de travail</label>
+            <input placeholder="Lieu de travail" class="form-control" list="lieu" name="lieu" [(ngModel)]="user.lieu"
+              #lieu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lieu.invalid }" required />
+
+            <datalist id="lieu">
+              <option value="Tunisie">
+              <option value="France">
+              <option value="Royaume-uni">
+              <option value="Emirats Arabes Unis">
+              <option value="Nigeria">
+              <option value="Afrique Du Sud">
+            </datalist>
+            <div *ngIf="f.submitted && lieu.invalid" class="alert alert-danger">
+              <div *ngIf="lieu.errors.required"> Lieu de travail est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="col">
+            <label for="name"> Departement:</label>
+            <input placeholder="Departement" list="Departement" class="form-control" name="departement"
+              [(ngModel)]="user.departement" #departement="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && departement.invalid }" required />
+            <datalist id="Departement">
+              <option value="Numérique et visualisation">
+              <option value="Finances et opérations">
+              <option value="Ingénierie ">
+              <option value="Apprentissage automatique">
+              <option value="Déploiement de produit">
+              <option value="Recherche">
+            </datalist>
+            <div *ngIf="f.submitted && departement.invalid" class="alert alert-danger">
+              <div *ngIf="departement.errors.required"> Departement est obligatoire</div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label class="control-label">Type Contrat</label>
+          <input placeholder="Type Contrat" class="form-control" list="type_contrat" name="type_contrat"
+            [(ngModel)]="user.type_contrat" #type_contrat="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && type_contrat.invalid }" required />
+
+          <datalist id="type_contrat">
+            <option value="CDD">
+            <option value="CDI">
+            <option value="SIVP">
+          </datalist>
+          <div *ngIf="f.submitted && type_contrat.invalid" class="alert alert-danger">
+            <div *ngIf="type_contrat.errors.required"> Type de contrat est obligatoire</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <label for="name"> Salaire</label>
+          <input placeholder="Salaire" type="number" class="form-control" name="salaire" [(ngModel)]="user.salaire"
+            #salaire="ngModel" [ngClass]="{ 'is-invalid': f.submitted && salaire.invalid }" required />
+          <div *ngIf="f.submitted && salaire.invalid" class="alert alert-danger">
+            <div *ngIf="salaire.errors.required"> Salaire est obligatoire</div>
+          </div>
+        </div>
+        </div><br>
+        
+        <div class="row">
+          <div class="col">
+            <label for="name"> Date Début Travail</label>
+          <input placeholder="Date Debut Travail" type="date" class="form-control" name="date_debut_travail"
+            [(ngModel)]="user.date_debut_travail" #date_debut_travail="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && date_debut_travail.invalid }" required />
+          <div *ngIf="f.submitted && date_debut_travail.invalid" class="alert alert-danger">
+            <div *ngIf="date_debut_travail.errors.required"> Date de début du travail est obligatoire</div>
+          </div>
+        </div>
+        </div><br><hr>
+        <div class="row">
+          <div class="col">
+              <label for="password" class="control-label">Password</label>
+          <input placeholder="Password" type="password" class="form-control" name="password" [(ngModel)]="user.password"
+            #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+          <div *ngIf="f.submitted && password.invalid" class="help-block">
+            <div class="alert alert-danger" *ngIf="password.errors.required">
+              Password est
+            </div>
+            <div class="alert alert-danger" *ngIf="password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <label for="confirmPassword" class="control-label">Confirm Password</label>
+          <input placeholder="confirm Password" name="confirmPassword" appConfirmEqualValidator="password" required
+            id="confirmPassword" type="password" class="form-control" [(ngModel)]="user.confirmPassword"
+            [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid}" #confirmPassword="ngModel">
+          <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+            Confirm Password is required
+          </div>
+          <div class="alert alert-danger" *ngIf="user.password !==user.confirmPassword">
+            Password and Confirm Password does not match
+          </div>
+        </div>
+        </div><br>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- <html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</html> -->

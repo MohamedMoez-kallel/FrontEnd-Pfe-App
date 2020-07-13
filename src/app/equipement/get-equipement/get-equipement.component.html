@@ -1,0 +1,25 @@
+
+<table>
+  <tr>
+    <th>Nombre d'equipement</th>
+    <th>Type d'equipement</th>
+    <th>Prix</th>
+    <th>Fournisseur</th>
+    <th>Numero de serie</th>
+    <th>Photo</th>
+    <th>Action</th>
+
+    
+  </tr>
+  <tr *ngFor="let equipement of listeEquipement ; let i = index">
+    <td>{{equipement.nb_equipement}}</td>
+    <td>{{equipement.type_equipement}}</td>
+    <td>{{equipement.prix}}</td>
+    <td>{{equipement.fournisseur}}</td>
+    <td>{{equipement.num_serie}}</td>
+    <td>{{equipement.photo}}</td>
+
+    <td><button (click)="onSelect(equipement)"routerLink="/update-equipement/{{equipement.id}}">Update</button> 
+    <button (click)="deleteEquipement(equipement)">Delete</button></td>
+  </tr>
+</table>

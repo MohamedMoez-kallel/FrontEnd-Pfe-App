@@ -1,0 +1,23 @@
+th {
+    background-color: rgb(154, 156, 157);
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding:4px 9px;
+  }
+  .container {
+    background:rgba(2, 60, 117, 0.5);
+    border-radius: 10px;
+    display: flex;  
+    flex-direction: column;
+  }
+  
+  .registre{
+    font-family: "museo-slab";  
+    font-size:20px;
+    text-align: center;
+    padding: 20px 30px 0;
+    margin:0;
+  }
+  

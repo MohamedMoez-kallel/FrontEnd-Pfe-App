@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Matricule</th>
+    <th>Date debut</th>
+    <th>Date Fin</th>
+  </tr>
+  <tr *ngFor="let parking of listeParking ; let i = index">
+    <td>{{parking.id}}</td>
+
+    <td>{{parking.matricule}}</td>
+    <td>{{parking.date_debut}}</td>
+    <td>{{parking.date_fin}}</td>
+    
+    <td><button >Update</button></td>  
+    <td><button>Delete</button></td>
+  </tr>
+</table>

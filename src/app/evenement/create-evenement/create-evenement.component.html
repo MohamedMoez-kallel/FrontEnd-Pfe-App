@@ -1,0 +1,81 @@
+ <div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter Evenement</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && ajouterEvn(f.value)" #f="ngForm" novalidate>
+      
+        <div class="form-group">
+          <label for="titre"> Titre</label>
+          <input placeholder="Titre" type="text" class="form-control" name="titre"
+            [(ngModel)]="evenement.titre" #titre="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && titre.invalid }" required />
+          <div *ngIf="f.submitted && titre.invalid" class="alert alert-danger">
+            <div *ngIf="titre.errors.required"> Titre est obligatoire</div>
+          </div>
+        </div>
+       
+
+        <div class="form-group">
+          <label for="description"> Description</label>
+          <input placeholder="Description" type="text" class="form-control" name="description"
+          [(ngModel)]="evenement.description" #description="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" required />
+          <div *ngIf="f.submitted && description.invalid" class="alert alert-danger">
+            <div *ngIf="description.errors.required">Description est obligatoire</div>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label> Date début evenement</label>
+          <input placeholder="Date début evenement" type="date" class="form-control" name="date_debut_evn"
+            [(ngModel)]="evenement.date_debut_evn" #date_debut_evn="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && date_debut_evn.invalid }" required />
+          <div *ngIf="f.submitted && date_debut_evn.invalid" class="alert alert-danger">
+            <div *ngIf="date_debut_evn.errors.required"> Date debut evenement est obligatoire</div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="date_fin_evn"> Date fin evenement</label>
+          <input placeholder="Date fin evenement" type="date" class="form-control" name="date_fin_evn"
+            [(ngModel)]="evenement.date_fin_evn" #date_fin_evn="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && date_fin_evn.invalid }" required />
+          <div *ngIf="f.submitted && date_fin_evn.invalid" class="alert alert-danger">
+            <div *ngIf="date_fin_evn.errors.required"> Date fin evenement est obligatoire</div>
+          </div>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="emplacement"> Lieu</label>
+          <input placeholder="Lieu" type="text" class="form-control" name="emplacement"
+            [(ngModel)]="evenement.emplacement" #emplacement="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && emplacement.invalid }" required />
+          <div *ngIf="f.submitted && emplacement.invalid" class="alert alert-danger">
+            <div *ngIf="emplacement.errors.required"> Lieu est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="photo"> Photo</label>
+          <input placeholder="Photo" type="text" class="form-control" name="photo"
+            [(ngModel)]="evenement.photo" #photo="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && photo.invalid }" required />
+            <div *ngIf="f.submitted && photo.invalid" class="alert alert-danger">
+              <div *ngIf="photo.errors.required"> Lieu est obligatoire</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div> 

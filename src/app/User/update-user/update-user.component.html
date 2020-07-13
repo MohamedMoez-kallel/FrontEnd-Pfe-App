@@ -1,0 +1,117 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1 class="registre">Update Employee</h1>
+
+      <h2>Informations Personnel</h2>
+      <div class="row">
+        <div class="col">
+          <label for="nom "> Nom</label>
+          <input class="form-control" type="text" [(ngModel)]="user.nom" name="nom" #nom="ngModel" />
+
+        </div>
+
+        <div class="col">
+          <label for="prenom"> Prenom</label>
+          <input type="text" class="form-control" [(ngModel)]="user.prenom" />
+        </div>
+      </div> <br>
+
+      <div class="row">
+
+        <div class="col">
+          <label for="name"> Date Naissance</label>
+          <input type="date" class="form-control" [(ngModel)]="user.date_naissance" />
+        </div>
+
+        <div class="col">
+          <label for="name"> Cin</label>
+          <input type="text" class="form-control" [(ngModel)]="user.cin" />
+        </div>
+
+      </div>
+      <h2>Contact</h2>
+      <div class="row">
+        <div class="col">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" [(ngModel)]="user.email" />
+        </div>
+
+        <div class="col">
+          <label for="name"> Téléphone</label>
+          <input type="number" class="form-control" [(ngModel)]="user.tel" />
+        </div>
+      </div>
+      <h2>Informations Administratif</h2>
+
+
+      <div class="row">
+        <div class="col">
+          <label class="control-label">Lieu de travail</label>
+          <input class="form-control" list="lieu" name="lieu" [(ngModel)]="user.lieu" />
+
+          <datalist id="lieu">
+            <option value="Tunisie">
+            <option value="France">
+            <option value="Royaume-uni">
+            <option value="Emirats Arabes Unis">
+            <option value="Nigeria">
+            <option value="Afrique Du Sud">
+          </datalist>
+
+        </div>
+
+        <div class="col">
+          <label for="name"> Departement:</label>
+          <input list="Departement" class="form-control" name="departement" [(ngModel)]="user.departement" />
+          <datalist id="Departement">
+            <option value="Numérique et visualisation">
+            <option value="Finances et opérations">
+            <option value="Ingénierie ">
+            <option value="Apprentissage automatique">
+            <option value="Déploiement de produit">
+            <option value="Recherche">
+          </datalist>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label class="control-label">Type Contrat</label>
+          <input class="form-control" list="type_contrat" name="type_contrat" [(ngModel)]="user.type_contrat" />
+
+          <datalist id="type_contrat">
+            <option value="CDD">
+            <option value="CDI">
+            <option value="SIVP">
+          </datalist>
+
+        </div>
+
+        <div class="col">
+          <label for="name"> Salaire</label>
+          <input type="number" class="form-control" [(ngModel)]="user.salaire" />
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col">
+          <label for="name"> Date Début Travail</label>
+          <input type="date" class="form-control" [(ngModel)]="user.date_debut_travail" />
+        </div>
+
+      </div><br>
+      <hr>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)="update()">Modifier </button>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

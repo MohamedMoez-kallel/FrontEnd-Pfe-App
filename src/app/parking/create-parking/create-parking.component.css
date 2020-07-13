@@ -1,0 +1,17 @@
+.container {
+    background:rgba(2, 60, 117, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    width:1000px;
+    display: flex;  
+    flex-direction: column;
+  }
+  
+  .registre{
+    font-family: "museo-slab";  
+    font-size:40px;
+    text-align: center;
+    padding: 20px 30px 0;
+    margin:0;
+  }
+  

@@ -1,0 +1,77 @@
+ <div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter Equipement</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && ajouterEqui(f.value)" #f="ngForm" novalidate>
+      
+        <div class="form-group">
+          <label for="titre"> Nombre d'equipement</label>
+          <input placeholder="Nombre d'equipement" type="number" class="form-control" name="nb_equipement"
+            [(ngModel)]="equipement.nb_equipement" #nb_equipement="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && nb_equipement.invalid }" required />
+          <div *ngIf="f.submitted && nb_equipement.invalid" class="alert alert-danger">
+            <div *ngIf="nb_equipement.errors.required"> Nombre d'equipement est obligatoire</div>
+          </div>
+        </div>
+       
+
+        <div class="form-group">
+          <label for="type_equipement"> Type d'equipement </label>
+          <input placeholder="type_equipement" type="text" class="form-control" name="type_equipement"
+          [(ngModel)]="equipement.type_equipement" #type_equipement="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && type_equipement.invalid }" required />
+          <div *ngIf="f.submitted && type_equipement.invalid" class="alert alert-danger">
+            <div *ngIf="type_equipement.errors.required">Type d'equipement est obligatoire</div>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label> Photo</label>
+          <input placeholder="Photo" type="text" class="form-control" name="photo"
+            [(ngModel)]="equipement.photo" #photo="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && photo.invalid }" required />
+        </div>
+
+
+        <div class="form-group">
+          <label for="prix"> Prix</label>
+          <input placeholder="Prix" type="number" class="form-control" name="prix"
+            [(ngModel)]="equipement.prix" #prix="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && prix.invalid }" required />
+          <div *ngIf="f.submitted && prix.invalid" class="alert alert-danger">
+            <div *ngIf="prix.errors.required"> Date fin equipement est obligatoire</div>
+          </div>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="fournisseur"> Fournisseur</label>
+          <input placeholder="Fournisseur" type="text" class="form-control" name="fournisseur"
+            [(ngModel)]="equipement.fournisseur" #fournisseur="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && fournisseur.invalid }" required />
+         
+        </div>
+        
+        <div class="form-group">
+          <label for="num_serie"> numero de serie</label>
+          <input placeholder="num_serie" type="text" class="form-control" name="num_serie"
+            [(ngModel)]="equipement.num_serie" #num_serie="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && num_serie.invalid }" required />
+            <div *ngIf="f.submitted && num_serie.invalid" class="alert alert-danger">
+              <div *ngIf="num_serie.errors.required"> Lieu est obligatoire</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div> 

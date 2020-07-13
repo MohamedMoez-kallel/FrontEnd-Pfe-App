@@ -1,0 +1,59 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter Une Salle</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && ajouterSalle(f.value)" #f="ngForm" novalidate>
+      
+        <div class="form-group">
+          <label for="num_salle"> Numéro de salle</label>
+          <input placeholder="Numéro de salle" type="number" class="form-control" name="num_salle"
+            [(ngModel)]="salle.num_salle" #num_salle="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && num_salle.invalid }" required />
+          <div *ngIf="f.submitted && num_salle.invalid" class="alert alert-danger">
+            <div *ngIf="num_salle.errors.required"> Numéro de salle est obligatoire</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="date_debut"> Date Début</label>
+          <input placeholder="date_debut" type="date" class="form-control" name="date_debut"
+          [(ngModel)]="salle.date_debut" #date_debut="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && date_debut.invalid }" required />
+          <div *ngIf="f.submitted && date_debut.invalid" class="alert alert-danger">
+            <div *ngIf="date_debut.errors.required">Date Debut est obligatoire</div>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="heure_debut"> Heure Début</label>
+          <input placeholder="heure_debut" type="time-local" class="form-control" name="heure_debut"
+          [(ngModel)]="salle.heure_debut" #heure_debut="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && heure_debut.invalid }" required />
+          <div *ngIf="f.submitted && heure_debut.invalid" class="alert alert-danger">
+            <div *ngIf="heure_debut.errors.required">Heure debut est obligatoire</div>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="heure_fin"> Heure Fin</label>
+          <input placeholder="" type="time-local" class="form-control" name="heure_fin"
+          [(ngModel)]="salle.heure_fin" #heure_fin="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && heure_fin.invalid }" required />
+          <div *ngIf="f.submitted && heure_fin.invalid" class="alert alert-danger">
+            <div *ngIf="heure_fin.errors.required">Heure Fin est obligatoire</div>
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,58 @@
+<!-- <table>
+  <tr>
+    <th>Titre</th>
+    <th>Description</th>
+  </tr>
+  <tr *ngFor="let publication of listePublication;">
+    <td>{{publication.titre}}</td>
+    <td>{{publication.description}}</td>
+  </tr>
+</table> -->
+
+<!-- <ul *ngFor="let publication of listePublication;">
+  <h3>Titre:</h3> {{publication.titre}}
+  
+  <h3>Description: </h3>{{publication.description}}
+  <hr  color="blue">
+</ul> -->
+
+<blockquote class="blockquote">
+  <div class="container">
+
+    <div class="registre">
+      <h1>Listes des formations</h1>
+    </div>
+    <ul class="list-group list-group-flush" *ngFor="let formation of listeFormation;">
+      <li class="list-group-item list-group-item-action">
+
+        <div class="row">
+          <div class="col">
+            <h2>Titre:  <h3>{{formation.titre}}</h3></h2><br>
+            <!-- <h2>Description:<h3> {{formation.description}}</h3></h2> -->
+            <h2>Type de formation: </h2>
+            <h3> {{formation.type_formation}}</h3>
+          </div>
+          <div class="col">
+       
+            <h2>Formateur: </h2>
+            <h3> {{formation.formateur}}</h3><br>
+            <h2>Nombre de place: </h2>
+            <h3> {{formation.nb_place}}</h3>
+          </div>
+
+          <div class="col">
+
+            <h2>Date de formation: </h2>
+            <h3> {{formation.date_formation}}</h3><br>
+            <h2>Heure de formation: </h2>
+            <h3> {{formation.heure_formation}}</h3>
+
+          </div>
+        </div>
+        <button (click)="deleteFor(formation)">Supprmine</button> 
+        <button (click)="onSelect(formation)"routerLink="/update-formation/{{formation.id}}">Update</button>
+      </li>
+    </ul>
+    <br><br>
+  </div>
+</blockquote>

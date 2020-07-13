@@ -1,0 +1,88 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Ajouter Formation</div>
+      </h1>
+
+      <form name="form" (ngSubmit)="f.form.valid && ajouterFor(f.value)" #f="ngForm" novalidate>
+      
+        <div class="form-group">
+          <label for="heure_formation"> Heure Formation</label>
+          <input placeholder="HH:mm" type="time-local" class="form-control" name="heure_formation"
+            [(ngModel)]="formation.heure_formation" #heure_formation="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && heure_formation.invalid }" required />
+          <div *ngIf="f.submitted && heure_formation.invalid" class="alert alert-danger">
+            <div *ngIf="heure_formation.errors.required"> Heure Formation est obligatoire</div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="date_formation"> Date Formation</label>
+          <input placeholder="Date Formation" type="date" class="form-control" name="date_formation"
+          [(ngModel)]="formation.date_formation" #date_formation="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && date_formation.invalid }" required />
+          <div *ngIf="f.submitted && date_formation.invalid" class="alert alert-danger">
+            <div *ngIf="date_formation.errors.required">Date Formation est obligatoire</div>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="titre"> Titre</label>
+          <input placeholder="Titre" type="text" class="form-control" name="titre"
+          [(ngModel)]="formation.titre" #titre="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && titre.invalid }" required />
+          <div *ngIf="f.submitted && titre.invalid" class="alert alert-danger">
+            <div *ngIf="titre.errors.required">Titre est obligatoire</div>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="description"> Description</label>
+          <input placeholder="Description" type="text" class="form-control" name="description"
+          [(ngModel)]="formation.description" #description="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" required />
+          <div *ngIf="f.submitted && description.invalid" class="alert alert-danger">
+            <div *ngIf="description.errors.required">Description est obligatoire</div>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="formateur"> Formateur</label>
+          <input placeholder="Formateur" type="text" class="form-control" name="formateur"
+            [(ngModel)]="formation.formateur" #formateur="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && formateur.invalid }" required />
+          <div *ngIf="f.submitted && formateur.invalid" class="alert alert-danger">
+            <div *ngIf="formateur.errors.required"> Formateur est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nb_place"> Nombre de place</label>
+          <input placeholder="Nombre de place" type="number" class="form-control" name="nb_place"
+            [(ngModel)]="formation.nb_place" #nb_place="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && nb_place.invalid }" required />
+          <div *ngIf="f.submitted && nb_place.invalid" class="alert alert-danger">
+            <div *ngIf="nb_place.errors.required"> Nombre de place est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="type_formation"> Type formation </label>
+          <input placeholder="Type de formation" type="text" class="form-control" name="type_formation"
+            [(ngModel)]="formation.type_formation" #type_formation="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && type_formation.invalid }" required />
+          <div *ngIf="f.submitted && type_formation.invalid" class="alert alert-danger">
+            <div *ngIf="type_formation.errors.required"> Type formation est obligatoire</div>
+          </div>
+        </div>
+
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

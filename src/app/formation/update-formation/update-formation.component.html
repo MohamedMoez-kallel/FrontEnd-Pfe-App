@@ -1,0 +1,55 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Modifier Formation</div>
+      </h1>
+
+
+      <div class="form-group">
+        <label for="heure_formation"> Heure Formation</label>
+        <input type="time-local" class="form-control" [(ngModel)]="formation.heure_formation"[ngModelOptions]="{standalone: true}" />
+
+      </div>
+
+
+      <div class="form-group">
+        <label for="date_formation"> Date Formation</label>
+        <input type="date" class="form-control" [(ngModel)]="formation.date_formation"[ngModelOptions]="{standalone: true}" />
+
+
+      </div>
+      <div class="form-group">
+        <label for="titre"> Titre</label>
+        <input type="text" class="form-control" [(ngModel)]="formation.titre"[ngModelOptions]="{standalone: true}"/>
+
+      </div>
+      <div class="form-group">
+        <label for="description"> Description</label>
+        <input type="text" class="form-control" [(ngModel)]="formation.description"[ngModelOptions]="{standalone: true}" />
+
+      </div>
+      <div class="form-group">
+        <label for="formateur"> Formateur</label>
+        <input type="text" class="form-control" [(ngModel)]="formation.formateur" [ngModelOptions]="{standalone: true}"/>
+
+      </div>
+      <div class="form-group">
+        <label for="nb_place"> Nombre de place</label>
+        <input type="number" class="form-control" [(ngModel)]="formation.nb_place" [ngModelOptions]="{standalone: true}"/>
+
+      </div>
+      <div class="form-group">
+        <label for="type_formation"> Type formation </label>
+        <input type="text" class="form-control" [(ngModel)]="formation.type_formation"[ngModelOptions]="{standalone: true}" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)="update()">Modifier </button>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</div>

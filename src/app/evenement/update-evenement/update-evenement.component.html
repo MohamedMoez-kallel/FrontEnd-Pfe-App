@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <div class="card-body">
+    <div class="container">
+      <h1>
+        <div class="registre">Modifier Evenement</div>
+      </h1>
+
+      <div class="form-group">
+        <label for="titre"> Titre</label>
+        <input type="text" class="form-control" [(ngModel)]="evenement.titre" />
+      </div>
+
+      <div class="form-group">
+        <label for="description"> Description</label>
+        <input type="text" class="form-control" [(ngModel)]="evenement.description" />
+      </div>
+
+      <div class="form-group">
+        <label> Date début evenement</label>
+        <input type="date" class="form-control" [(ngModel)]="evenement.date_debut_evn" />
+      </div>
+
+      <div class="form-group">
+        <label for="date_fin_evn"> Date fin evenement</label>
+        <input type="date" class="form-control" [(ngModel)]="evenement.date_fin_evn" />
+      </div>
+
+      <div class="form-group">
+        <label for="emplacement"> Lieu</label>
+        <input type="text" class="form-control" [(ngModel)]="evenement.emplacement" />
+      </div>
+      
+      <div class="form-group">
+        <label for="photo"> Photo</label>
+        <input type="text" class="form-control" name="photo" [(ngModel)]="evenement.photo" />
+
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)='update()'>Ajouter</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

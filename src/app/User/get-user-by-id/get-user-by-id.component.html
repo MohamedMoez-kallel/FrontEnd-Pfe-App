@@ -1,0 +1,35 @@
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Date naissance</th>
+    <th>Cin</th>
+    <th>Sexe</th>
+    <th>Lieu de travail</th>
+    <th>Département</th>
+    <th>Type contrat</th>
+    <th>Salaire</th>
+    <th>Date début travail</th>
+    <th>Email</th>
+    <th>Téléphone</th>
+    <th>Photo</th>
+    <th>Action</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let user of listeUser ; let i = index">
+    <td>{{user.nom}}</td>
+    <td>{{user.prenom}}</td>
+    <td>{{user.date_naissance}}</td>
+    <td>{{user.cin}}</td>
+    <td>{{user.sexe}}</td>
+    <td>{{user.lieu}}</td>
+    <td>{{user.departement}}</td>
+    <td>{{user.type_contrat}}</td>
+    <td>{{user.salaire}}</td>
+    <td>{{user.date_debut_travail}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.tel}}</td>
+    <td>{{user.photo}}</td>
+    
+  </tr>
+</table>

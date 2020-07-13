@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Numero de salle</th>
+    <th>Date debut</th>
+    <th>Heure debut</th>
+    <th>Heure fin</th>
+  </tr>
+  <tr *ngFor="let salle_reunion of listeSalle ; let i = index">
+
+    <td>{{salle_reunion.num_salle}}</td>
+    <td>{{salle_reunion.date_debut}}</td>
+    <td>{{salle_reunion.heure_debut}}</td>
+    <td>{{salle_reunion.heure_fin}}</td>
+    
+    <td><button >Update</button></td>  
+    <td><button>Delete</button></td>
+  </tr>
+</table>

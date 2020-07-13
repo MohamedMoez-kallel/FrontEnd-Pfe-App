@@ -1,0 +1,80 @@
+<blockquote class="blockquote">
+  <div class="container">
+
+    <div class="registre">
+      <h1>Formations</h1>
+    </div>
+    <ul class="list-group list-group-flush" *ngFor="let formation of listeFormation;">
+      <li class="list-group-item list-group-item-action">
+
+        <div class="row">
+          <div class="col">
+            <h2>Titre:  <h3>{{formation.titre}}</h3></h2><br>
+            <!-- <h2>Description:<h3> {{formation.description}}</h3></h2> -->
+            <h2>Type de formation: </h2>
+            <h3> {{formation.type_formation}}</h3>
+          </div>
+          <div class="col">
+       
+            <h2>Formateur: </h2>
+            <h3> {{formation.formateur}}</h3><br>
+            <h2>Nombre de place: </h2>
+            <h3> {{formation.nb_place}}</h3>
+          </div>
+
+          <div class="col">
+
+            <h2>Date de formation: </h2>
+            <h3> {{formation.date_formation}}</h3><br>
+            <h2>Heure de formation: </h2>
+            <h3> {{formation.heure_formation}}</h3>
+
+          </div>
+        </div>
+       
+      </li>
+    </ul>
+    <br><br>
+  </div>
+</blockquote>
+<blockquote class="blockquote">
+  <div class="container">
+
+    <div class="registre">
+      <h1>Listes des evenements</h1>
+    </div>
+    <ul class="list-group list-group-flush"  *ngFor="let evenement of listeEvenement;">
+      <li class="list-group-item list-group-item-action">
+
+        <div class="row">
+          <div class="col">
+            <h2>Titre:  <h3>{{evenement.titre}}</h3></h2><br>
+            <!-- <h2>Description:<h3> {{formation.description}}</h3></h2> -->
+            <h2>Date debut evenement: </h2>
+            <h3>  {{evenement.date_debut_evn}}</h3>
+          </div>
+          <div class="col">
+       
+            <h2>Date fin evenement:: </h2>
+            <h3> {{evenement.date_fin_evn}}</h3><br>
+            <h2>Lieu: </h2>
+            <h3> {{evenement.emplacement}}</h3>
+          </div>
+
+          <div class="col">
+
+            <h2>Description: </h2>
+            <h3> {{evenement.description}}</h3><br>
+            <h2>Photo </h2>
+            <h3> {{evenement.photo}}</h3>
+
+          </div>
+        </div>
+        
+
+      </li>
+    </ul>
+
+    <br><br>
+  </div>
+</blockquote>
